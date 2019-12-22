@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+  </head>
+  <body>
+  
+
+    <script>
+      // API from: https://punkapi.com/documentation/v2
+      window.onload = function() {
+        getBeersTwo(10);
+      }
+
+      function getBeers(id) {
+        return fetch('https://api.punkapi.com/v2/beers/' + id)
+        .then(response => response.json())
+        .then(data => data.results[0])
+      }
+
+      let beers;
+
+      function getBeersTwo(id) {
+        fetch('https://api.punkapi.com/v2/beers/' + id)
+          .then(response => response.json())
+          .then(data => beers = data)
+      }
+
+      function getBeersThree(fetch, id) {
+        fetch('https://api.punkapi.com/v2/beers/' + id)
+          .then(response => response.json())
+          .then(data => beers = data)
+          console.log(beers)
+      }
+
+      setTimeout(function(){ console.log(beers); }, 1000);
+    
+
+      describe('getBeers', () => {
+        it('works in the basic case', () => {
+          
+        })
+      })
+      //
+
+
+      
+      // let pokemon; 
+      // let pokemonTwo;
+      
+      
+      // window.onload = function() {
+      //   getPokemonOne();
+      //   getPokemonTwo();
+      // }
+      
+      //  getPokemonOne = () => {
+      //   fetch(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 700) + 1  }/`)
+      //     .then(res => res.json())
+      //     .then(posts => pokemon = posts)
+      // }
+      
+      // const getPokemonTwo = () => {
+      //   fetch(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 700) + 1  }/`)
+      //     .then(res => res.json())
+      //     .then(posts => pokemonTwo = posts)
+      // }
+      
+      // setTimeout(function(){ console.log(pokemon); }, 600);
+      // setTimeout(function(){ console.log(pokemonTwo); }, 1000);
+      
+      // let image1 = document.querySelector('.pokemonOne');
+      // let image2 = document.querySelector('.pokemonTwo');
+      
+      // setTimeout(function(){image1.src = pokemon.sprites.front_default; }, 700);
+      // setTimeout(function(){image2.src = pokemonTwo.sprites.back_default; }, 1000);
+      
+      // let pokemonName1 = document.querySelector('.pokemonOneP');
+      // let pokemonName2 = document.querySelector('.pokemonTwoP');
+      
+      // setTimeout(function(){ pokemonName1.innerText = `Player 1: ${pokemon.name}`; }, 700);
+      // setTimeout(function(){ pokemonName2.innerText = `Player 2: ${pokemonTwo.name}`; }, 1000);
+              
+      //         //Access attack:
+      //         // pokemon.stats[4].stat.name
+      //         // pokemon.stats[4].base_stat
+      // let fightResultText = document.querySelector('.fightresult');
+      
+      // setTimeout(
+      // function() { 
+      //   if (pokemon.stats[4].base_stat >= pokemonTwo.stats[4].base_stat) {
+      //       fightResultText.innerText = `${pokemon.name} wins!`
+      //             // console.log(`${pokemon.name} WINS!`);
+      //           } else {
+      //             fightResultText.innerText = `${pokemonTwo.name} wins!`
+      //           }
+      // ;}, 2000);
+      
+      
+      </script>
+  </body>
+</html>
